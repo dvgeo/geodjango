@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load leaflet_tags %}
+<html>
+    <head>
     <title>Agricom Map Portal</title>
-</head>
-<body>
-    <p>This is our map portal page</p>
-</body>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    </head>
+    <body>
+        <div id="agrimap" style="height: 600px; width: 100%;"></div>
+    </body>
+<script>
+    var map = L.map(‘agrimap’, {
+    center: [-0.397783, 36.960936],
+    zoom: 15,
+    });
+    var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'});
+
+    var topo = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17, attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'});
+    osm.addTo(map);
+</script>
+</html>
+</script>
 </html>
