@@ -1,2 +1,2 @@
-# geodjango
+# GeoDjango
 Projeto simples de GeoDjango.
