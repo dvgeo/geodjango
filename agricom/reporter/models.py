@@ -14,3 +14,12 @@ class Incidence(models.Model):
         return self.title
     class Meta:
         verbose_name_plural =" Incidences"
+
+class County(models.Model):
+    country = models.CharField(max_length=100)
+    geom = gis_models.MultiPolygonField(srid=4326)
+
+    def __str__(self):
+        return self.country
+    class Meta:
+        verbose_name_plural =" Counties"
