@@ -1,2 +1,2 @@
 # GeoDjango
-Projeto simples de GeoDjango.
+Projeto simples de GeoDjango do canal Life in Gis.
