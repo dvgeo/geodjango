@@ -41,6 +41,25 @@
         incidences.addData(data);
     });
 
+    var countries = L.geoJson(null, {
+        style:function(feature){
+           value = feature.properties.country;
+           if(value == "Uganda"){
+               return {color:"#ff0000"};
+           }
+           if (value == "Tanzania") {
+               return {color:"#ff0000"};
+           } else {
+               return {color: "#00ffff"};
+           }
+        },
+    }).addTo(map)
+
+    var countriesURL = 'county';
+
+    $.getJSON(countriesURL, function (data){
+        countries.addData(data)
+    });    
 </script>
 </body>
 </html>

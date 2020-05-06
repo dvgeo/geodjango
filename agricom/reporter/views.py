@@ -16,4 +16,4 @@ def IncidenceData(request):
     return HttpResponse(points,content_type='json')
 def CountyData(request):
     counties = serialize('geojson', County.objects.all())
-    return HttpResponse(counties,content_type='json')   
+    return HttpResponse(counties,content_type='json')       
